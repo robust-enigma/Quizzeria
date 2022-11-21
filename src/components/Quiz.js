@@ -6,7 +6,7 @@ import { useState, useContext } from "react";
 import { QuizContext } from "../Helpers/Context";
 
 function Quiz() {
-  const { score, setScore, setGameState } = useContext(QuizContext); //destructuring
+  const { score, setScore, setGameState } = useContext(QuizContext); 
   const [currQuestion, setCurrQuestion] = useState(0); //0th index first question
   const [optionChosen, setOptionChosen] = useState(""); //reference to which option u choose
 
