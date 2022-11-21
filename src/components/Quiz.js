@@ -11,13 +11,15 @@ function Quiz() {
   const [optionChosen, setOptionChosen] = useState(""); //reference to which option u choose
 
   const nextQuestion = () => {
-    //if u get next question
+    //if u choose the correct option, then score will be implemented
     if (Questions[currQuestion].answer == optionChosen) {
       setScore(score + 1);
     }
+    //move to next question
     setCurrQuestion(currQuestion + 1);
   };
-
+  
+  //called for last question
   const finishQuiz = () => {
     if (Questions[currQuestion].answer == optionChosen) {
       setScore(score + 1);
@@ -42,7 +44,7 @@ function Quiz() {
           {Questions[currQuestion].optionD}
         </button>
       </div>
-
+      //to avoid array out of bounds error, if u encounter last question then go to finishQuiz
       {currQuestion == Questions.length - 1 ? (
         <button onClick={finishQuiz}>Finish Quiz</button>
       ) : (
